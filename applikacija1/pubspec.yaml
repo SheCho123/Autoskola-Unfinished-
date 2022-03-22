@@ -56,6 +56,17 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/Left_Arrow.png
+    - assets/images/Lock.png
+    - assets/images/Check.png
+    - assets/images/Iksic.png
+    - assets/images/Bars.png
+    - assets/images/SidebarImg1.png
+    - assets/images/SidebarImg2.png
+    - assets/images/SidebarImg3.png
+    - assets/images/SidebarImg4.png
+    - assets/images/SidebarImg5.png
+    - assets/images/SidebarImg6.png
+    - assets/images/SidebarImg7.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
