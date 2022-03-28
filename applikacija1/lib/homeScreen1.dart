@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:applikacija1/instruktorPodaciScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -23,9 +24,8 @@ class HomeScreen extends StatelessWidget {
     double unitHeightValue = screenHeight * 0.01;
     double unitWidthValue = screenWidth * 0.01;
     double multiplier = 8;
-    return MaterialApp(
-        home: Scaffold(
-            body: Stack(
+    return Scaffold(
+        body: Stack(
       children: [
         Container(
             height: screenHeight * 0.125,
@@ -56,63 +56,110 @@ class HomeScreen extends StatelessWidget {
               color: Colors.grey,
             ),
             Container(
-              child: Image.asset("assets/images/SidebarImg1.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.01309, bottom: screenHeight * 0.01309),
+              height: screenHeight * 0.06666,
+              width: screenWidth * 0.125,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(
+                "assets/images/SidebarImg1.png",
+              ))),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const InstruktorPodaci())),
+                child: const Text(" "),
+              ),
             ),
             Divider(
               thickness: screenHeight * 0.004,
               color: Colors.grey,
             ),
             Container(
-              child: Image.asset("assets/images/SidebarImg2.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.01309, bottom: screenHeight * 0.01309),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/SidebarImg2.png"))),
+              child: TextButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InstruktorPodaci())),
+                  child: const Text(" ")),
             ),
             Divider(
               thickness: screenHeight * 0.004,
               color: Colors.grey,
             ),
             Container(
-              child: Image.asset("assets/images/SidebarImg3.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.01309, bottom: screenHeight * 0.01309),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/SidebarImg3.png"))),
+              child: TextButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InstruktorPodaci())),
+                  child: const Text(" ")),
             ),
             Divider(
               thickness: screenHeight * 0.004,
               color: Colors.grey,
             ),
             Container(
-              child: Image.asset("assets/images/SidebarImg4.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.01309, bottom: screenHeight * 0.01309),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/SidebarImg4.png"))),
+              child: TextButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InstruktorPodaci())),
+                  child: const Text(" ")),
             ),
             Divider(
               thickness: screenHeight * 0.004,
               color: Colors.grey,
             ),
             Container(
-              child: Image.asset("assets/images/SidebarImg5.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.01309, bottom: screenHeight * 0.01309),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/SidebarImg5.png"))),
+              child: TextButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InstruktorPodaci())),
+                  child: const Text(" ")),
             ),
             Divider(
               thickness: screenHeight * 0.004,
               color: Colors.grey,
             ),
             Container(
-              child: Image.asset("assets/images/SidebarImg6.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.01309, bottom: screenHeight * 0.01309),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/SidebarImg6.png"))),
+              child: TextButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InstruktorPodaci())),
+                  child: const Text(" ")),
             ),
             Divider(
               thickness: screenHeight * 0.004,
               color: Colors.grey,
             ),
             Container(
-              child: Image.asset("assets/images/SidebarImg7.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.01309, bottom: screenHeight * 0.01309),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/SidebarImg7.png"))),
+              child: TextButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const InstruktorPodaci())),
+                  child: const Text(" ")),
             ),
             Divider(
               thickness: screenHeight * 0.004,
@@ -123,70 +170,116 @@ class HomeScreen extends StatelessWidget {
         Column(
           children: [
             Container(
-              margin: EdgeInsets.only(
-                  top: (screenHeight + statusBarHeight) * 0.15095,
-                  left: screenWidth * 0.1386),
-              child: Column(
-                children: [
-                  Container(
-                      width: screenWidth * 0.83409,
-                      height: screenHeight * 0.06595,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 255, 245, 162),
-                        borderRadius: BorderRadius.circular(5),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 4,
-                            offset: Offset(1, 2), // Shadow position
-                          ),
-                        ],
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Nadolazeći Termini",
-                          style: TextStyle(fontSize: screenHeight * 0.04),
-                          textAlign: TextAlign.center,
+                margin: EdgeInsets.only(
+                    top: (screenHeight + statusBarHeight) * 0.15095,
+                    left: screenWidth * 0.1386),
+                child: Container(
+                    width: screenWidth * 0.83409,
+                    height: screenHeight * 0.06595,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 255, 245, 162),
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 4,
+                          offset: Offset(1, 2), // Shadow position
                         ),
-                      ))
-                ],
-              ),
-            ),
+                      ],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Nadolazeći Termini",
+                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        textAlign: TextAlign.center,
+                      ),
+                    ))),
             Container(
-              margin: EdgeInsets.only(
-                  top: (screenHeight + statusBarHeight) * 0.03,
-                  left: screenWidth * 0.1386),
-              child: Column(
-                children: [
-                  Container(
-                      width: screenWidth * 0.83409,
-                      height: screenHeight * 0.06595,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 4,
-                            offset: Offset(1, 2), // Shadow position
-                          ),
-                        ],
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Placeholder",
-                          style: TextStyle(fontSize: screenHeight * 0.04),
-                          textAlign: TextAlign.center,
+                margin: EdgeInsets.only(
+                    top: (screenHeight + statusBarHeight) * 0.03,
+                    left: screenWidth * 0.1386),
+                child: Container(
+                    width: screenWidth * 0.83409,
+                    height: screenHeight * 0.06595,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 4,
+                          offset: Offset(1, 2), // Shadow position
                         ),
-                      ))
-                ],
-              ),
-            )
+                      ],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Placeholder",
+                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        textAlign: TextAlign.center,
+                      ),
+                    ))),
           ],
-        )
+        ),
+        Column(
+          children: [
+            Container(
+                margin: EdgeInsets.only(
+                    top: (screenHeight + statusBarHeight) * 0.35095,
+                    left: screenWidth * 0.1386),
+                child: Container(
+                    width: screenWidth * 0.83409,
+                    height: screenHeight * 0.06595,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 255, 245, 162),
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 4,
+                          offset: Offset(1, 2), // Shadow position
+                        ),
+                      ],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Nadolazeće Uplate",
+                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        textAlign: TextAlign.center,
+                      ),
+                    ))),
+            Container(
+                margin: EdgeInsets.only(
+                    top: (screenHeight + statusBarHeight) * 0.03,
+                    left: screenWidth * 0.1386),
+                child: Container(
+                    width: screenWidth * 0.83409,
+                    height: screenHeight * 0.06595,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 4,
+                          offset: Offset(1, 2), // Shadow position
+                        ),
+                      ],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Placeholder",
+                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        textAlign: TextAlign.center,
+                      ),
+                    ))),
+          ],
+        ),
       ],
-    )));
+    ));
   }
 }

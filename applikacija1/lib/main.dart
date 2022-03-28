@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:applikacija1/homeScreen1.dart';
 import 'package:applikacija1/passChanged.dart';
+import 'package:applikacija1/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,8 +25,7 @@ class MyApp extends StatelessWidget {
     double unitWidthValue = screenWidth * 0.01;
     double multiplier = 8;
 
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(screenHeight * 0.1147),
         child: AppBar(
@@ -103,7 +103,7 @@ class MyApp extends StatelessWidget {
               ),
               child: TextField(
                 style: TextStyle(
-                    fontSize: (multiplier * unitHeightValue) * 0.25,
+                    fontSize: (multiplier * unitHeightValue) * 0.45,
                     color: Colors.white),
                 decoration: InputDecoration(
                     border: const OutlineInputBorder(),
@@ -116,7 +116,7 @@ class MyApp extends StatelessWidget {
                     hintText: 'Stari password',
                     hintStyle: TextStyle(
                         color: Colors.white,
-                        fontSize: (multiplier * unitHeightValue) * 0.25)),
+                        fontSize: (multiplier * unitHeightValue) * 0.30)),
                 obscureText: true,
               ),
             ),
@@ -131,7 +131,7 @@ class MyApp extends StatelessWidget {
               ),
               child: TextField(
                 style: TextStyle(
-                    fontSize: (multiplier * unitHeightValue) * 0.25,
+                    fontSize: (multiplier * unitHeightValue) * 0.45,
                     color: Colors.white),
                 decoration: InputDecoration(
                     border: const OutlineInputBorder(),
@@ -144,7 +144,7 @@ class MyApp extends StatelessWidget {
                     hintText: 'Novi password',
                     hintStyle: TextStyle(
                         color: Colors.white,
-                        fontSize: (multiplier * unitHeightValue) * 0.25)),
+                        fontSize: (multiplier * unitHeightValue) * 0.30)),
                 obscureText: true,
               ),
             ),
@@ -159,7 +159,7 @@ class MyApp extends StatelessWidget {
               ),
               child: TextField(
                 style: TextStyle(
-                    fontSize: (multiplier * unitHeightValue) * 0.25,
+                    fontSize: (multiplier * unitHeightValue) * 0.45,
                     color: Colors.white),
                 decoration: InputDecoration(
                     border: const OutlineInputBorder(),
@@ -172,7 +172,7 @@ class MyApp extends StatelessWidget {
                     hintText: 'Potvrdite novi password',
                     hintStyle: TextStyle(
                         color: Colors.white,
-                        fontSize: (multiplier * unitHeightValue) * 0.25)),
+                        fontSize: (multiplier * unitHeightValue) * 0.30)),
                 obscureText: true,
               ),
             ),
@@ -190,7 +190,10 @@ class MyApp extends StatelessWidget {
                   height: screenHeight * 0.06428,
                   width: screenWidth * 0.3159,
                   child: TextButton(
-                    onPressed: (() => exit(0)),
+                    onPressed: (() => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()))),
                     child: const Text("Odustani"),
                     style: ButtonStyle(
                         backgroundColor:
@@ -225,7 +228,7 @@ class MyApp extends StatelessWidget {
         color: const Color.fromRGBO(94, 97, 170, 1.0),
       ),
       resizeToAvoidBottomInset: false,
-    ));
+    );
   }
 }
 
