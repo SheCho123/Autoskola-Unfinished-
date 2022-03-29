@@ -24,155 +24,52 @@ class HomeScreen extends StatelessWidget {
     double unitHeightValue = screenHeight * 0.01;
     double unitWidthValue = screenWidth * 0.01;
     double multiplier = 8;
+    final GlobalKey<ScaffoldState> _keyPrvi = GlobalKey<ScaffoldState>();
+
     return Scaffold(
-        body: Stack(
-      children: [
-        Container(
-            height: screenHeight * 0.125,
-            width: screenWidth,
-            child: Container(
-                margin: EdgeInsets.only(
-                    left: screenWidth * 0.1659, top: screenHeight * 0.05),
-                child: Text(
-                  "HOME",
-                  style: TextStyle(
+      key: _keyPrvi,
+      appBar: PreferredSize(preferredSize: Size.fromHeight(screenHeight * 0.125),
+      child: AppBar(
+      leading: Builder(
+      builder: (BuildContext context) {
+        return IconButton(
+          icon: Icon(
+            Icons.menu_rounded,
+            size: screenHeight * 0.1
+          ),
+          onPressed: () => _keyPrvi.currentState?.openDrawer(), 
+          tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+        );
+      },
+    ),
+    title: Container(
+      margin: EdgeInsets.only(
+        left: screenWidth * 0.05,
+      ),
+      child: Text(
+          "HOME",
+          style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                       fontSize: screenHeight * 0.06),
-                )),
-            color: const Color.fromARGB(255, 180, 182, 228)),
-        Container(
-          height: screenHeight,
-          width: screenWidth * 0.125,
-          color: const Color.fromARGB(255, 94, 97, 170),
-          child: Column(children: [
-            Container(
-              child: Image.asset("assets/images/Bars.png"),
-              margin: EdgeInsets.only(
-                  top: screenHeight * 0.05, bottom: screenHeight * 0.03809),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-            Container(
-              height: screenHeight * 0.06666,
-              width: screenWidth * 0.125,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                "assets/images/SidebarImg1.png",
-              ))),
-              child: TextButton(
-                onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const InstruktorPodaci())),
-                child: const Text(" "),
-              ),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/SidebarImg2.png"))),
-              child: TextButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const InstruktorPodaci())),
-                  child: const Text(" ")),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/SidebarImg3.png"))),
-              child: TextButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const InstruktorPodaci())),
-                  child: const Text(" ")),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/SidebarImg4.png"))),
-              child: TextButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const InstruktorPodaci())),
-                  child: const Text(" ")),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/SidebarImg5.png"))),
-              child: TextButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const InstruktorPodaci())),
-                  child: const Text(" ")),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/SidebarImg6.png"))),
-              child: TextButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const InstruktorPodaci())),
-                  child: const Text(" ")),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/SidebarImg7.png"))),
-              child: TextButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const InstruktorPodaci())),
-                  child: const Text(" ")),
-            ),
-            Divider(
-              thickness: screenHeight * 0.004,
-              color: Colors.grey,
-            ),
-          ]),
-        ),
-        Column(
+                )
+                ,),
+    toolbarHeight: screenHeight * 0.5119,
+    backgroundColor: const Color.fromARGB(255, 180, 182, 228),
+      ),
+      ),
+    //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
+    body: 
+    Column(children: [
+    Column(
           children: [
             Container(
                 margin: EdgeInsets.only(
-                    top: (screenHeight + statusBarHeight) * 0.15095,
-                    left: screenWidth * 0.1386),
+                    top: (screenHeight + statusBarHeight) * 0.04,
+                    left: screenWidth * 0.0829),
                 child: Container(
                     width: screenWidth * 0.83409,
                     height: screenHeight * 0.06595,
@@ -191,14 +88,14 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         "Nadolazeći Termini",
-                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        style: TextStyle(fontSize: screenHeight * 0.04, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
                     ))),
             Container(
                 margin: EdgeInsets.only(
-                    top: (screenHeight + statusBarHeight) * 0.03,
-                    left: screenWidth * 0.1386),
+                    top: (screenHeight + statusBarHeight) * 0.018,
+                    left: screenWidth * 0.0829),
                 child: Container(
                     width: screenWidth * 0.83409,
                     height: screenHeight * 0.06595,
@@ -217,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         "Placeholder",
-                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        style: TextStyle(fontSize: screenHeight * 0.03),
                         textAlign: TextAlign.center,
                       ),
                     ))),
@@ -227,8 +124,8 @@ class HomeScreen extends StatelessWidget {
           children: [
             Container(
                 margin: EdgeInsets.only(
-                    top: (screenHeight + statusBarHeight) * 0.35095,
-                    left: screenWidth * 0.1386),
+                    top: (screenHeight + statusBarHeight) * 0.055095,
+                    left: screenWidth * 0.0829),
                 child: Container(
                     width: screenWidth * 0.83409,
                     height: screenHeight * 0.06595,
@@ -247,14 +144,15 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         "Nadolazeće Uplate",
-                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        style: TextStyle(fontSize: screenHeight * 0.04,
+                        fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
                     ))),
             Container(
                 margin: EdgeInsets.only(
                     top: (screenHeight + statusBarHeight) * 0.03,
-                    left: screenWidth * 0.1386),
+                    left: screenWidth * 0.0829),
                 child: Container(
                     width: screenWidth * 0.83409,
                     height: screenHeight * 0.06595,
@@ -273,13 +171,254 @@ class HomeScreen extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         "Placeholder",
-                        style: TextStyle(fontSize: screenHeight * 0.04),
+                        style: TextStyle(fontSize: screenHeight * 0.03),
                         textAlign: TextAlign.center,
                       ),
                     ))),
           ],
         ),
       ],
-    ));
+    ),
+  
+        drawer: Drawer(
+          backgroundColor: const Color.fromRGBO(94, 97, 170, 1.0),
+          child: Column(children: [
+            Align(
+              alignment: const Alignment(-0.6, 0.0),
+              child: Container(
+              margin: EdgeInsets.only(
+                top: screenHeight * 0.04,
+                bottom: screenHeight * 0.02
+              ),
+              child: Text("Navigation:",
+              style: TextStyle(fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: screenHeight * 0.05),),
+            ),
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+            Row( 
+              children: [
+                Container(
+                margin: EdgeInsets.only(top: screenHeight * 0.02,
+                left: screenWidth * 0.06,
+                bottom: screenHeight * 0.02),
+                child: Align(
+                alignment: const Alignment(-0.01, -0.8),
+                child: Transform.scale(
+                scale: screenHeight * 0.002,
+                child: Image.asset("assets/images/SidebarImg1.png"),
+                ),
+                ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.05
+                  ),
+                  child: Text("Dokumenti",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
+              ],
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+            Row( 
+              children: [
+                Container(
+                margin: EdgeInsets.only(top: screenHeight * 0.02,
+                left: screenWidth * 0.06,
+                bottom: screenHeight * 0.02),
+                child: Align(
+                alignment: const Alignment(-0.01, -0.8),
+                child: Transform.scale(
+                scale: screenHeight * 0.002,
+                child: Image.asset("assets/images/SidebarImg2.png"),
+                ),
+                ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.05
+                  ),
+                  child: Text("Instruktor",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
+              ],
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+            Row( 
+              children: [
+                Container(
+                margin: EdgeInsets.only(top: screenHeight * 0.02,
+                left: screenWidth * 0.06,
+                bottom: screenHeight * 0.02),
+                child: Align(
+                alignment: const Alignment(-0.01, -0.8),
+                child: Transform.scale(
+                scale: screenHeight * 0.002,
+                child: Image.asset("assets/images/SidebarImg3.png"),
+                ),
+                ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.05
+                  ),
+                  child: Text("Raspored",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
+              ],
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+            Row( 
+              children: [
+                Container(
+                margin: EdgeInsets.only(top: screenHeight * 0.02,
+                left: screenWidth * 0.06,
+                bottom: screenHeight * 0.02),
+                child: Align(
+                alignment: const Alignment(-0.01, -0.8),
+                child: Transform.scale(
+                scale: screenHeight * 0.002,
+                child: Image.asset("assets/images/SidebarImg4.png"),
+                ),
+                ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.05
+                  ),
+                  child: Text("Uplate",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
+              ],
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+            Row( 
+              children: [
+                Container(
+                margin: EdgeInsets.only(top: screenHeight * 0.02,
+                left: screenWidth * 0.06,
+                bottom: screenHeight * 0.02),
+                child: Align(
+                alignment: const Alignment(-0.01, -0.8),
+                child: Transform.scale(
+                scale: screenHeight * 0.002,
+                child: Image.asset("assets/images/SidebarImg5.png"),
+                ),
+                ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.05
+                  ),
+                  child: Text("Testovi",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
+              ],
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+            Row( 
+              children: [
+                Container(
+                margin: EdgeInsets.only(top: screenHeight * 0.02,
+                left: screenWidth * 0.06,
+                bottom: screenHeight * 0.02),
+                child: Align(
+                alignment: const Alignment(-0.01, -0.8),
+                child: Transform.scale(
+                scale: screenHeight * 0.002,
+                child: Image.asset("assets/images/SidebarImg6.png"),
+                ),
+                ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.05
+                  ),
+                  child: Text("Moj Profil",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
+              ],
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+            Row( 
+              children: [
+                Container(
+                margin: EdgeInsets.only(top: screenHeight * 0.02,
+                left: screenWidth * 0.06,
+                bottom: screenHeight * 0.02),
+                child: Align(
+                alignment: const Alignment(-0.01, -0.8),
+                child: Transform.scale(
+                scale: screenHeight * 0.002,
+                child: Image.asset("assets/images/SidebarImg7.png"),
+                ),
+                ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.05
+                  ),
+                  child: Text("Notifikacije",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenHeight * 0.05,
+                    fontWeight: FontWeight.bold
+                  ),),
+                )
+              ],
+            ),
+            Divider(
+              thickness: screenHeight * 0.005,
+              color: Colors.grey,
+            ),
+          ],)
+        ),
+    );
   }
 }

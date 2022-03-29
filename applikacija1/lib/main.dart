@@ -178,14 +178,19 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: Image.asset('assets/images/Lock.png'),
-              margin: EdgeInsets.only(top: screenHeight * 0.04166),
+              margin: EdgeInsets.only(top: screenHeight * 0.03166),
             ),
-            Row(
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
               children: [
                 // ignore: avoid_unnecessary_containers
                 Container(
+                  //constraints: BoxConstraints(maxWidth: 200),
                   margin: EdgeInsets.only(
+                    
                     left: screenWidth * 0.1477,
+                    top: screenHeight * 0.008
                   ),
                   height: screenHeight * 0.06428,
                   width: screenWidth * 0.3159,
@@ -202,8 +207,10 @@ class MyApp extends StatelessWidget {
                 ),
                 // ignore: avoid_unnecessary_containers
                 Container(
+                  //constraints: BoxConstraints(maxWidth: 200),
                   margin: EdgeInsets.only(
                     left: screenWidth * 0.07045,
+                    top: screenHeight * 0.008
                   ),
                   height: screenHeight * 0.06428,
                   width: screenWidth * 0.3159,
@@ -220,7 +227,7 @@ class MyApp extends StatelessWidget {
                   ),
                 )
               ],
-            )
+            ),)
           ],
         ),
         height: screenHeight * 0.8853,

@@ -73,7 +73,10 @@ class InstruktorPodaci extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   color: Color.fromRGBO(180, 182, 228, 1.0),
                 ),
-                child: Column(children: [
+                child: FractionallySizedBox(
+                  widthFactor: 1.0,
+                  heightFactor: 1.0,
+                  child: Column(children: [
                   Container(
                     margin: EdgeInsets.only(top: screenHeight * 0.05476),
                     child: Image.asset(
@@ -82,25 +85,27 @@ class InstruktorPodaci extends StatelessWidget {
                       width: screenWidth * 0.3590,
                     ),
                   ),
-                  Container(
+                  Align(
+                    alignment: const Alignment(-0.9, 0.0),
+                    child: Container(
                     margin: EdgeInsets.only(
                       top: screenHeight * 0.0438,
-                      right: screenWidth * 0.22,
                     ),
                     child: Text(
                       'Ime:',
                       style: TextStyle(
                           color: Colors.black, fontSize: screenHeight * 0.035),
-                    ),
+                    ),)
                   ),
                   Divider(
                     color: Colors.black,
                     thickness: screenHeight * 0.003,
                   ),
-                  Container(
+                  Align(
+                    alignment: const Alignment(-0.9, 0.0),
+                    child: Container(
                     margin: EdgeInsets.only(
                       top: screenHeight * 0.01838,
-                      right: screenWidth * 0.184,
                     ),
                     child: Text(
                       'Prezime:',
@@ -108,14 +113,16 @@ class InstruktorPodaci extends StatelessWidget {
                           color: Colors.black, fontSize: screenHeight * 0.035),
                     ),
                   ),
+                  ),
                   Divider(
                     color: Colors.black,
                     thickness: screenHeight * 0.003,
                   ),
-                  Container(
+                  Align(
+                    alignment: const Alignment(-0.9, 0.0),
+                    child: Container(
                     margin: EdgeInsets.only(
                       top: screenHeight * 0.01838,
-                      right: screenWidth * 0.144,
                     ),
                     child: Text(
                       'Broj telefona:',
@@ -123,22 +130,24 @@ class InstruktorPodaci extends StatelessWidget {
                           color: Colors.black, fontSize: screenHeight * 0.035),
                     ),
                   ),
+                  ),
                   Divider(
                     color: Colors.black,
                     thickness: screenHeight * 0.003,
                   ),
-                  Container(
+                  Align(
+                    alignment: const Alignment(-0.9, 0.0),
+                    child:Container(
                     margin: EdgeInsets.only(
                       top: screenHeight * 0.01838,
-                      right: screenWidth * 0.2,
                     ),
                     child: Text(
                       'E-mail:',
                       style: TextStyle(
                           color: Colors.black, fontSize: screenHeight * 0.035),
                     ),
-                  ),
-                ]),
+                  ),),
+                ]),)
               )
             ],
           ),
