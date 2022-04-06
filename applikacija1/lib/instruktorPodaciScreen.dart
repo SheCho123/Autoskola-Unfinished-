@@ -3,12 +3,12 @@ import 'package:applikacija1/homeScreen1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
+/*void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MaterialApp(home: InstruktorPodaci()));
-}
+} */
 
 class InstruktorPodaci extends StatelessWidget {
   const InstruktorPodaci({Key? key}) : super(key: key);
@@ -65,90 +65,95 @@ class InstruktorPodaci extends StatelessWidget {
                 width: screenWidth * 0.27,
               ),
               Container(
-                height: screenHeight * 0.6238,
-                width: screenWidth * 0.8909,
-                constraints: const BoxConstraints(maxWidth: 500),
-                margin: EdgeInsets.only(top: screenHeight * 0.05238),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                  color: Color.fromRGBO(180, 182, 228, 1.0),
-                ),
-                child: FractionallySizedBox(
-                  widthFactor: 1.0,
-                  heightFactor: 1.0,
-                  child: Column(children: [
-                  Container(
-                    margin: EdgeInsets.only(top: screenHeight * 0.05476),
-                    child: Image.asset(
-                      "assets/images/Placeholder.png",
-                      height: screenHeight * 0.17857,
-                      width: screenWidth * 0.3590,
-                    ),
+                  height: screenHeight * 0.6238,
+                  width: screenWidth * 0.8909,
+                  constraints: const BoxConstraints(maxWidth: 500),
+                  margin: EdgeInsets.only(top: screenHeight * 0.05238),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: Color.fromRGBO(180, 182, 228, 1.0),
                   ),
-                  Align(
-                    alignment: const Alignment(-0.9, 0.0),
-                    child: Container(
-                    margin: EdgeInsets.only(
-                      top: screenHeight * 0.0438,
-                    ),
-                    child: Text(
-                      'Ime:',
-                      style: TextStyle(
-                          color: Colors.black, fontSize: screenHeight * 0.035),
-                    ),)
-                  ),
-                  Divider(
-                    color: Colors.black,
-                    thickness: screenHeight * 0.003,
-                  ),
-                  Align(
-                    alignment: const Alignment(-0.9, 0.0),
-                    child: Container(
-                    margin: EdgeInsets.only(
-                      top: screenHeight * 0.01838,
-                    ),
-                    child: Text(
-                      'Prezime:',
-                      style: TextStyle(
-                          color: Colors.black, fontSize: screenHeight * 0.035),
-                    ),
-                  ),
-                  ),
-                  Divider(
-                    color: Colors.black,
-                    thickness: screenHeight * 0.003,
-                  ),
-                  Align(
-                    alignment: const Alignment(-0.9, 0.0),
-                    child: Container(
-                    margin: EdgeInsets.only(
-                      top: screenHeight * 0.01838,
-                    ),
-                    child: Text(
-                      'Broj telefona:',
-                      style: TextStyle(
-                          color: Colors.black, fontSize: screenHeight * 0.035),
-                    ),
-                  ),
-                  ),
-                  Divider(
-                    color: Colors.black,
-                    thickness: screenHeight * 0.003,
-                  ),
-                  Align(
-                    alignment: const Alignment(-0.9, 0.0),
-                    child:Container(
-                    margin: EdgeInsets.only(
-                      top: screenHeight * 0.01838,
-                    ),
-                    child: Text(
-                      'E-mail:',
-                      style: TextStyle(
-                          color: Colors.black, fontSize: screenHeight * 0.035),
-                    ),
-                  ),),
-                ]),)
-              )
+                  child: FractionallySizedBox(
+                    widthFactor: 1.0,
+                    heightFactor: 1.0,
+                    child: Column(children: [
+                      Container(
+                        margin: EdgeInsets.only(top: screenHeight * 0.05476),
+                        child: Image.asset(
+                          "assets/images/Placeholder.png",
+                          height: screenHeight * 0.17857,
+                          width: screenWidth * 0.3590,
+                        ),
+                      ),
+                      Align(
+                          alignment: const Alignment(-0.9, 0.0),
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: screenHeight * 0.0438,
+                            ),
+                            child: Text(
+                              'Ime:',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: screenHeight * 0.035),
+                            ),
+                          )),
+                      Divider(
+                        color: Colors.black,
+                        thickness: screenHeight * 0.003,
+                      ),
+                      Align(
+                        alignment: const Alignment(-0.9, 0.0),
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            top: screenHeight * 0.01838,
+                          ),
+                          child: Text(
+                            'Prezime:',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: screenHeight * 0.035),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: Colors.black,
+                        thickness: screenHeight * 0.003,
+                      ),
+                      Align(
+                        alignment: const Alignment(-0.9, 0.0),
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            top: screenHeight * 0.01838,
+                          ),
+                          child: Text(
+                            'Broj telefona:',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: screenHeight * 0.035),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: Colors.black,
+                        thickness: screenHeight * 0.003,
+                      ),
+                      Align(
+                        alignment: const Alignment(-0.9, 0.0),
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            top: screenHeight * 0.01838,
+                          ),
+                          child: Text(
+                            'E-mail:',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: screenHeight * 0.035),
+                          ),
+                        ),
+                      ),
+                    ]),
+                  ))
             ],
           ),
           height: screenHeight * 0.8853,

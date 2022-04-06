@@ -4,12 +4,12 @@ import 'package:flutter/services.dart';
 
 import 'main.dart';
 
-void main() {
+/*void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MaterialApp(home: PassChanged()));
-}
+} */
 
 class PassChanged extends StatelessWidget {
   const PassChanged({Key? key}) : super(key: key);

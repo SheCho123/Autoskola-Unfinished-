@@ -9,7 +9,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  runApp(const MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(home: HomeScreen()));
 }
 
 class MyApp extends StatelessWidget {
@@ -183,51 +183,47 @@ class MyApp extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Row(
-              children: [
-                // ignore: avoid_unnecessary_containers
-                Container(
-                  //constraints: BoxConstraints(maxWidth: 200),
-                  margin: EdgeInsets.only(
-                    
-                    left: screenWidth * 0.1477,
-                    top: screenHeight * 0.008
-                  ),
-                  height: screenHeight * 0.06428,
-                  width: screenWidth * 0.3159,
-                  child: TextButton(
-                    onPressed: (() => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()))),
-                    child: const Text("Odustani"),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white)),
-                  ),
-                ),
-                // ignore: avoid_unnecessary_containers
-                Container(
-                  //constraints: BoxConstraints(maxWidth: 200),
-                  margin: EdgeInsets.only(
-                    left: screenWidth * 0.07045,
-                    top: screenHeight * 0.008
-                  ),
-                  height: screenHeight * 0.06428,
-                  width: screenWidth * 0.3159,
-                  child: TextButton(
-                    onPressed: (() => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const PassChanged()))),
-                    child: const Text("Promijeni"),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
+                children: [
+                  // ignore: avoid_unnecessary_containers
+                  Container(
+                    //constraints: BoxConstraints(maxWidth: 200),
+                    margin: EdgeInsets.only(
+                        left: screenWidth * 0.1477, top: screenHeight * 0.008),
+                    height: screenHeight * 0.06428,
+                    width: screenWidth * 0.3159,
+                    child: TextButton(
+                      onPressed: (() => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()))),
+                      child: const Text("Odustani"),
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white)),
                     ),
                   ),
-                )
-              ],
-            ),)
+                  // ignore: avoid_unnecessary_containers
+                  Container(
+                    //constraints: BoxConstraints(maxWidth: 200),
+                    margin: EdgeInsets.only(
+                        left: screenWidth * 0.07045, top: screenHeight * 0.008),
+                    height: screenHeight * 0.06428,
+                    width: screenWidth * 0.3159,
+                    child: TextButton(
+                      onPressed: (() => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const PassChanged()))),
+                      child: const Text("Promijeni"),
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
         height: screenHeight * 0.8853,
