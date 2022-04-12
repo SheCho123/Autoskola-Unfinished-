@@ -1,26 +1,14 @@
-import 'dart:io';
 import 'package:applikacija1/homeScreen1.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-/*void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  runApp(const MaterialApp(home: InstruktorPodaci()));
-} */
 
 class InstruktorPodaci extends StatelessWidget {
   const InstruktorPodaci({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-    final statusBarHeight = MediaQuery.of(context).padding.top;
     double unitHeightValue = screenHeight * 0.01;
-    double unitWidthValue = screenWidth * 0.01;
     double multiplier = 8;
     return Scaffold(
         appBar: PreferredSize(

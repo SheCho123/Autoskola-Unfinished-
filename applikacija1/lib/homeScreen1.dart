@@ -1,9 +1,11 @@
 import 'dart:io';
 import 'package:applikacija1/instruktorPodaciScreen.dart';
+import 'package:applikacija1/raspored.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'main.dart';
+import 'passChanged.dart';
 
 /*void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -220,16 +222,20 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                margin:
-                                    EdgeInsets.only(left: screenWidth * 0.05),
-                                child: Text(
-                                  options[index],
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: screenHeight * 0.05,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              )
+                                  margin:
+                                      EdgeInsets.only(left: screenWidth * 0.05),
+                                  child: TextButton(
+                                    child: Text(options[index],
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: screenHeight * 0.05,
+                                            fontWeight: FontWeight.bold)),
+                                    onPressed: () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                screensArray[index])),
+                                  ))
                             ],
                           );
                         },
@@ -252,6 +258,16 @@ final List<String> options = <String>[
   'Testovi',
   'Moj Profil',
   'Notifikacije'
+];
+
+final screensArray = [
+  const InstruktorPodaci(),
+  const MyApp(),
+  const MyApp(), //Placeholders until I make more screens
+  const PassChanged(),
+  const InstruktorPodaci(),
+  const MyApp(),
+  const InstruktorPodaci(),
 ];
 
 int i = 1;
